@@ -93,10 +93,12 @@ export default class Day<
         <View style={[styles.container, containerStyle]}>
           <View style={wrapperStyle}>
             <Text style={[styles.text, textStyle]}>
-              {moment(currentMessage.createdAt)
-                .locale(this.context.getLocale())
-                .format(dateFormat)
-                .toUpperCase()}
+              {typeof (currentMessage._id) === 'object' ?
+                moment(currentMessage._id.toDate()).format("ll")
+                : moment(currentMessage.createdAt)
+                  .locale(this.context.getLocale())
+                  .format(dateFormat)
+                  .toUpperCase()}
             </Text>
           </View>
         </View>
