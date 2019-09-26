@@ -9,8 +9,8 @@ export function isSameDay(
     return false
   }
 
-  const currentCreatedAt = moment(currentMessage.createdAt)
-  const diffCreatedAt = moment(diffMessage.createdAt)
+  const currentCreatedAt = typeof (currentMessage._id) === 'object' ? moment(currentMessage._id.toDate()) : moment(currentMessage.createdAt);
+  const diffCreatedAt = typeof (diffMessage._id) === 'object' ? moment(diffMessage._id.toDate()) : moment(diffMessage.createdAt);
 
   if (!currentCreatedAt.isValid() || !diffCreatedAt.isValid()) {
     return false
