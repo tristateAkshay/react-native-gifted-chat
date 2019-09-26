@@ -117,9 +117,10 @@ export default class Time<
               ] as TextStyle
             }
           >
-            {moment(currentMessage.createdAt)
-              .locale(this.context.getLocale())
-              .format(timeFormat)}
+          {typeof (currentMessage._id) === 'object' ?
+                moment(currentMessage._id.toDate()).format("LT")
+                : moment(currentMessage.createdAt).locale(this.context.getLocale()).format(timeFormat)
+               }
           </Text>
         </View>
       )
