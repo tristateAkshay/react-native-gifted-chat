@@ -593,9 +593,9 @@ class GiftedChat<TMessage extends IMessage = IMessage> extends React.Component<
   }
 
   scrollToBottom(animated = true) {
-    if (this._messageContainerRef && this._messageContainerRef.current) {
-      this._messageContainerRef.current.scrollTo({ offset: 0, animated })
-    }
+//     if (this._messageContainerRef && this._messageContainerRef.current) {
+//       this._messageContainerRef.current.scrollTo({ offset: 0, animated })
+//     }
   }
 
   renderMessages() {
